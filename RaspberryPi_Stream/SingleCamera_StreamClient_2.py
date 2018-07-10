@@ -1,5 +1,6 @@
-#Single source Python stream from Raspberry Pi camera
+Single source Python stream from Raspberry Pi camera
 
+#This code runs on the third Raspberry Pi
 import io
 import socket
 import struct
@@ -7,9 +8,10 @@ import time
 import picamera
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect(('#Enter the preffered IP connect address', 8000))
+client_socket.connect(('#Enter the preffered IP connect address', 8004))
+#Serverport different for all different streams
 
-connection = client_socket.makefile('wb'))
+connection = client_socket.makefile('wb2'))
 
 try:
     with picamera.PiCamera() as camera:
